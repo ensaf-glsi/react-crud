@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import type { SyntheticEvent } from "react";
+import type { ReactElement, SyntheticEvent } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import { Input } from "components/Input";
@@ -19,7 +19,7 @@ interface User {
   type?: 'societe' | 'pp';
 };
 
-const Home: NextPage = () => {
+const Home = () => {
   const {
     handleSubmit,
     watch,
@@ -119,3 +119,14 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <div>
+      home layout
+      <main>
+        {page}
+      </main>
+    </div>
+  )
+}

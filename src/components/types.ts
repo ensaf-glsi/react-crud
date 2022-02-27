@@ -1,0 +1,1 @@
+export type LayoutName = 'empty' | 'main' | 'centered';
